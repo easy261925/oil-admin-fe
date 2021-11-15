@@ -1,7 +1,6 @@
-import { dealHuanxianService, queryHuanxianService, queryShanghuService } from '@/services/common';
+import { queryShanghuService } from '@/services/common';
 import { PageContainer } from '@ant-design/pro-layout';
 import ProTable, { ActionType, ProColumns } from '@ant-design/pro-table';
-import { message, Popconfirm } from 'antd';
 import React, { useRef } from 'react';
 
 const Registration = () => {
@@ -34,11 +33,16 @@ const Registration = () => {
     },
     {
       title: '开户银行',
-      dataIndex: 'yinhangming'
+      dataIndex: 'yinhangming',
     },
     {
       title: '银行卡号',
-      dataIndex: 'yinhangka'
+      dataIndex: 'yinhangkaList',
+      render: (dom, entity) => {
+        return <div>
+          {entity.yinhangkaList.map((item: any) => <div key={item.id}>{item.yinhangming}/{item.yinhangka}</div>)}
+        </div>
+      }
     },
     {
       title: '申请时间',

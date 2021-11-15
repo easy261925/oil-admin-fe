@@ -8,8 +8,7 @@
 export default {
   dev: {
     '/server/api': {
-      // target: 'http://localhost:7999', // wxh
-      target: 'http://101.42.97.131:80', // prod
+      target: 'http://101.42.97.131:8080', // prod
       changeOrigin: true,
       pathRewrite: { '^/server/api': '/' },
     },

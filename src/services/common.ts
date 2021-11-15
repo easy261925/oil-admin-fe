@@ -48,7 +48,7 @@ export async function dealShiwuJiaoyiService(payload: any) {
   });
 }
 
-//查看用户积分交易记录
+// 查看用户积分交易记录
 export async function queryShangpinJiaoyiService(payload: any) {
   return request(`/server/api/jiaoyiShangpin/queryShangpinJiaoyi`, {
     method: 'POST',
@@ -137,6 +137,7 @@ export async function onsaleShangpinService(payload: any) {
     if (payload.hasOwnProperty(key)) {
       const item = payload[key] || '';
       if (Array.isArray(item)) {
+        // eslint-disable-next-line array-callback-return
         item.map((i) => {
           params.append(([key] as unknown) as string, i);
         });

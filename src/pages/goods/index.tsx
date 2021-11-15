@@ -1,4 +1,4 @@
-import { dealHuanxianService, offshelvesShangpinService, onsaleShangpinService, onshelvesShangpinService, queryHuanxianService, queryShangpinService } from '@/services/common';
+import { offshelvesShangpinService, onsaleShangpinService, onshelvesShangpinService, queryShangpinService } from '@/services/common';
 import { UploadOutlined } from '@ant-design/icons';
 import { PageContainer } from '@ant-design/pro-layout';
 import ProTable, { ActionType, ProColumns } from '@ant-design/pro-table';
@@ -166,6 +166,9 @@ const Goods = () => {
         <Form.Item
           label='价值'
           name='jiazhi'
+          rules={[{
+            required: true, message: '请输入价值'
+          }]}
         >
           <InputNumber placeholder='请输入商品价值' style={{ width: '100%' }} />
         </Form.Item>
@@ -178,7 +181,7 @@ const Goods = () => {
             required: true, message: '请上传商品图片'
           }]}
         >
-          <Upload action="/upload.do" listType="picture">
+          <Upload action="/upload.do" listType="picture" accept='image/*'>
             <Button icon={<UploadOutlined />}>上传图片</Button>
           </Upload>
         </Form.Item>

@@ -6,8 +6,8 @@ import { getEquipmentService } from './service';
 const Equipment = () => {
   const columns: ProColumns<any>[] = [
     {
-      title: 'id',
-      dataIndex: '设备ID'
+      title: '设备ID',
+      dataIndex: 'id'
     },
     {
       title: '设备编号',

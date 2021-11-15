@@ -2,7 +2,7 @@ import request from '@/utils/axios';
 
 // 查询设备
 export async function getEquipmentService(payload: any) {
-  return request(`/server/api/tDevice/save`, {
+  return request(`/server/api/tDevice/queryDevice`, {
     method: 'POST',
     data: {
       pageno: payload.current,

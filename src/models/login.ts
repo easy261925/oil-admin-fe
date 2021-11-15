@@ -2,7 +2,6 @@ import { stringify } from 'querystring';
 import type { Reducer, Effect } from 'umi';
 import { history } from 'umi';
 
-import { loginService, logoutService } from '@/services/login';
 import { setAuthority } from '@/utils/authority';
 import { getPageQuery } from '@/utils/utils';
 import { setToken, removeToken } from '@/utils/axios';
@@ -40,6 +39,7 @@ const Model: LoginModelType = {
   effects: {
     *userLogin({ payload }, { call, put }) {
       const { userName, password, type } = payload;
+      console.log('payload', payload)
       // TODO 模拟登录 匹配用户名、密码
       let success = false;
       let msg = '登录失败';
@@ -100,7 +100,7 @@ const Model: LoginModelType = {
     },
 
     *logout(_, { call }) {
-      const { redirect, token } = getPageQuery();
+      const { redirect, token } = yield getPageQuery();
       // TODO 模拟退出登录
       // const { success } = yield call(logoutService);
       const success = true

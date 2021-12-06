@@ -14,7 +14,7 @@ const proSettings: DefaultSettings = {
   fixedHeader: false,
   fixSiderbar: true,
   colorWeak: false,
-  title: '演示系统',
+  title: '加油系统',
   pwa: false,
   iconfontUrl: '',
 };

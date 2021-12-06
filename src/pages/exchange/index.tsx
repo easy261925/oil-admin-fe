@@ -48,13 +48,13 @@ const Exchange = () => {
     },
     {
       title: '开始兑换时间',
-      dataIndex: 'createtime',
+      dataIndex: 'mindate',
       valueType: 'dateTime',
       hideInTable: true,
     },
     {
       title: '结束兑换时间',
-      dataIndex: 'huanxiantime',
+      dataIndex: 'maxdate',
       valueType: 'dateTime',
       hideInTable: true,
     }

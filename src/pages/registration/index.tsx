@@ -9,6 +9,7 @@ const Registration = () => {
 
     {
       title: '商户编号',
+      search: false,
       dataIndex: 'bianhao'
     },
     {
@@ -17,6 +18,7 @@ const Registration = () => {
     },
     {
       title: '店主姓名',
+      search: false,
       dataIndex: 'realname'
     },
     {
@@ -25,6 +27,7 @@ const Registration = () => {
     },
     {
       title: '当前积分',
+      search: false,
       dataIndex: 'jifen'
     },
     {
@@ -33,11 +36,18 @@ const Registration = () => {
     },
     {
       title: '开户银行',
+      search: false,
       dataIndex: 'yinhangming',
     },
     {
       title: '银行卡号',
+      dataIndex: 'yinhangka',
+      hideInTable: true,
+    },
+    {
+      title: '银行卡号',
       dataIndex: 'yinhangkaList',
+      search: false,
       render: (dom, entity) => {
         return <div>
           {entity.yinhangkaList.map((item: any) => <div key={item.id}>{item.yinhangming}/{item.yinhangka}</div>)}
@@ -47,7 +57,20 @@ const Registration = () => {
     {
       title: '申请时间',
       dataIndex: 'createtime',
-    }
+      search: false,
+    },
+    {
+      title: '开始申请时间',
+      dataIndex: 'Createtime',
+      valueType: 'dateTime',
+      hideInTable: true,
+    },
+    {
+      title: '结束申请时间',
+      dataIndex: 'createtime',
+      valueType: 'dateTime',
+      hideInTable: true,
+    },
   ]
 
   return <PageContainer>
@@ -55,7 +78,9 @@ const Registration = () => {
       columns={columns}
       request={params => queryShanghuService(params)}
       rowKey='id'
-      search={false}
+      search={{
+        labelWidth: 140
+      }}
       actionRef={actionRef}
     />
   </PageContainer>

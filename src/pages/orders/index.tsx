@@ -9,13 +9,15 @@ const Refund = () => {
       title: '商户订单号',
       dataIndex: 'outTradeNo',
       ellipsis: true,
-      copyable: true
+      copyable: true,
+      search: false
     },
     {
       title: '订单号',
       dataIndex: 'orderId',
       ellipsis: true,
-      copyable: true
+      copyable: true,
+      search: false
     },
     {
       title: '设备信息',
@@ -25,7 +27,8 @@ const Refund = () => {
     },
     {
       title: '通知时间',
-      dataIndex: 'notifyTime'
+      dataIndex: 'notifyTime',
+      search: false
     },
     {
       title: '付款金额',
@@ -33,30 +36,43 @@ const Refund = () => {
     },
     {
       title: '实际加注金额',
-      dataIndex: 'spent_amount'
+      dataIndex: 'spent_amount',
+      search: false
     },
     {
       title: '已加注升数或公斤数',
-      dataIndex: 'fillAmount'
+      dataIndex: 'fillAmount',
+      search: false
     },
     {
       title: '实际加注单价',
+      search: false,
       dataIndex: 'fillPrice'
     },
     {
       title: '开始时间',
-      dataIndex: 'fillTime'
+      dataIndex: 'notifyTime',
+      valueType: 'dateTime'
+    },
+    {
+      title: '结束时间',
+      dataIndex: 'notifyTime',
+      valueType: 'dateTime',
+      hideInTable: true,
     },
     {
       title: '加注过程耗时（秒）',
+      search: false,
       dataIndex: 'timeConsum'
     },
     {
       title: 'GPS经度',
+      search: false,
       dataIndex: 'longitude'
     },
     {
       title: 'GPS纬度',
+      search: false,
       dataIndex: 'latitude'
     },
   ]
@@ -66,7 +82,6 @@ const Refund = () => {
       columns={columns}
       request={queryOrdersService}
       rowKey='id'
-      search={false}
     />
   </PageContainer>
 }

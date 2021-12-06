@@ -10,26 +10,32 @@ const Goods = () => {
   const [form] = Form.useForm();
   const [visible, setVisible] = useState(false)
   const columns: ProColumns<any>[] = [
-
     {
       title: '商品名称',
-      dataIndex: 'name'
+      dataIndex: 'name',
     },
     {
       title: '图片',
       dataIndex: 'imgurl',
+      search: false,
       render: (dom: any) => <img src={dom} style={{ height: 40, width: 40 }} />
     },
     {
       title: '分类',
-      dataIndex: 'fenlei'
+      dataIndex: 'fenlei',
+      valueEnum: {
+        '实物': '实物',
+        '兑换券': '兑换券'
+      }
     },
     {
       title: '积分',
-      dataIndex: 'jifen'
+      dataIndex: 'jifen',
+      search: false,
     },
     {
       title: '价值',
+      search: false,
       dataIndex: 'jiazhi'
     },
     {
@@ -40,9 +46,9 @@ const Goods = () => {
         1: '已上架'
       }
     },
-
     {
       title: '操作',
+      search: false,
       render: (dom, entity) =>
         <Space>
           {entity.zhuangtai === 0 && <Popconfirm
@@ -106,7 +112,6 @@ const Goods = () => {
       columns={columns}
       request={params => queryShangpinService(params)}
       rowKey='id'
-      search={false}
       actionRef={actionRef}
       toolBarRender={() => [
         <Button type="primary"

@@ -72,6 +72,9 @@ const Orders = () => {
       columns={columns}
       rowKey='id'
       request={queryTRefundService}
+      search={{
+        labelWidth: 140
+      }}
     />
   </PageContainer>
 }

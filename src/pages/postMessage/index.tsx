@@ -21,18 +21,22 @@ const PostMessage = () => {
     },
     {
       title: '收货地址',
-      dataIndex: 'shouhuodizhi'
+      dataIndex: 'shouhuodizhi',
+      search: false,
     },
     {
       title: '兑换时间',
+      search: false,
       dataIndex: 'jiaoyitime'
     },
     {
       title: '发货时间',
+      search: false,
       dataIndex: 'fahuotime'
     },
     {
       title: '操作',
+      search: false,
       render: (dom, entity) => entity.fahuo !== 1 && <Popconfirm title='确认处理?' onConfirm={() => {
         dealShiwuJiaoyiService(entity).then(res => {
           console.log('res__', res)

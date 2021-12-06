@@ -15,22 +15,27 @@ const Exchange = () => {
     },
     {
       title: '消费人',
-      dataIndex: 'xiaofeizhe'
+      dataIndex: 'xiaofeizhe',
+      search: false,
     },
     {
       title: '联系电话',
+      search: false,
       dataIndex: 'xphone'
     },
     {
       title: '收货地址',
+      search: false,
       dataIndex: 'shouhuodizhi'
     },
     {
       title: '兑换时间',
+      search: false,
       dataIndex: 'jiaoyitime'
     },
     {
       title: '发货时间',
+      search: false,
       dataIndex: 'fahuotime'
     },
     {
@@ -40,6 +45,18 @@ const Exchange = () => {
         0: '未发货',
         1: '已发货'
       }
+    },
+    {
+      title: '开始兑换时间',
+      dataIndex: 'createtime',
+      valueType: 'dateTime',
+      hideInTable: true,
+    },
+    {
+      title: '结束兑换时间',
+      dataIndex: 'huanxiantime',
+      valueType: 'dateTime',
+      hideInTable: true,
     }
   ]
 
@@ -48,7 +65,9 @@ const Exchange = () => {
       columns={columns}
       request={(params) => queryShangpinJiaoyiService(params)}
       rowKey='id'
-      search={false}
+      search={{
+        labelWidth: 140
+      }}
     />
   </PageContainer>
 }

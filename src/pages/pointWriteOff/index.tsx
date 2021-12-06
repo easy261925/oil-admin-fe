@@ -10,7 +10,8 @@ const PointWriteOff = () => {
 
     {
       title: '申请时间',
-      dataIndex: 'shenqingtime'
+      dataIndex: 'shenqingtime',
+      search: false,
     },
     {
       title: '商户号',
@@ -26,18 +27,22 @@ const PointWriteOff = () => {
     },
     {
       title: '开户银行',
+      search: false,
       dataIndex: 'yinhangming'
     },
     {
       title: '银行卡号',
+      search: false,
       dataIndex: 'yinhangka'
     },
     {
       title: '积分',
+      search: false,
       dataIndex: 'jifen'
     },
     {
       title: '金额',
+      search: false,
       dataIndex: 'jine'
     },
     {
@@ -50,13 +55,14 @@ const PointWriteOff = () => {
     },
     {
       title: '核销时间',
+      search: false,
       dataIndex: 'huanxiantime'
     },
     {
       title: '操作',
-      render: (dom, entity) => entity.huanxian !== 1 && <Popconfirm title='确认核销' onConfirm={() => {
+      search: false,
+      render: (dom, entity) => entity.huanxian !== 1 && <Popconfirm title='确认核销?' onConfirm={() => {
         dealHuanxianService(entity).then(res => {
-          console.log('res__', res)
           if (res.success) {
             actionRef.current?.reload()
             message.success('处理成功')
@@ -73,7 +79,6 @@ const PointWriteOff = () => {
       columns={columns}
       request={params => queryHuanxianService(params)}
       rowKey='id'
-      search={false}
       actionRef={actionRef}
     />
   </PageContainer>

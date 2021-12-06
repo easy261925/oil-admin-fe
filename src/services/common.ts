@@ -24,6 +24,7 @@ export async function queryShiwuJiaoyiService(payload: any) {
     data: {
       pageno: payload.current,
       pagesize: payload.pageSize,
+      condition: payload
     },
   }).then(res => {
     return {
@@ -55,6 +56,7 @@ export async function queryShangpinJiaoyiService(payload: any) {
     data: {
       pageno: payload.current,
       pagesize: payload.pageSize,
+      condition: payload
     },
   }).then(res => {
     return {
@@ -72,6 +74,7 @@ export async function queryHuanxianService(payload: any) {
     data: {
       pageno: payload.current,
       pagesize: payload.pageSize,
+      condition: payload
     },
   }).then(res => {
     return {
@@ -84,7 +87,7 @@ export async function queryHuanxianService(payload: any) {
 
 // 处理核销接口
 export async function dealHuanxianService(payload: any) {
-  return request(`/server/api/jiaoyiShangpin/dealHuanxian`, {
+  return request(`/server/api/jiaoyiHuanxian/dealHuanxian`, {
     method: 'POST',
     data: {
       id: payload.id
@@ -103,6 +106,7 @@ export async function queryShanghuService(payload: any) {
     data: {
       pageno: payload.current,
       pagesize: payload.pageSize,
+      condition: payload
     },
   }).then(res => {
     return {
@@ -120,6 +124,7 @@ export async function queryShangpinService(payload: any) {
     data: {
       pageno: payload.current,
       pagesize: payload.pageSize,
+      condition: payload
     },
   }).then(res => {
     return {

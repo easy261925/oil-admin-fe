@@ -15,7 +15,8 @@ const Points = () => {
     },
     {
       title: '积分',
-      dataIndex: 'jifen'
+      dataIndex: 'jifen',
+      search: false
     },
   ]
 
@@ -24,7 +25,6 @@ const Points = () => {
       columns={columns}
       request={(params) => queryXiaofeizheService(params)}
       rowKey='id'
-      search={false}
     />
   </PageContainer>
 }

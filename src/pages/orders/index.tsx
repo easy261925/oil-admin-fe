@@ -53,6 +53,7 @@ const Refund = () => {
       title: '开始时间',
       dataIndex: 'notifyTime',
       valueType: 'dateTime',
+      search: false
     },
     {
       title: '开始时间',

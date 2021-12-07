@@ -63,7 +63,20 @@ const Orders = () => {
     },
     {
       title: '退款时间',
-      dataIndex: 'refundtime'
+      dataIndex: 'refundtime',
+      search: false
+    },
+    {
+      title: '退款开始时间',
+      dataIndex: 'mindate',
+      hideInTable: true,
+      valueType: 'dateTime'
+    },
+    {
+      title: '退款结束时间',
+      dataIndex: 'maxdate',
+      hideInTable: true,
+      valueType: 'dateTime'
     },
   ]
 

@@ -8,6 +8,11 @@ export async function queryTRefundService(payload: any) {
       pageno: payload.current,
       pagesize: payload.pageSize,
       condition: payload,
+      dates: payload.mindate || payload.maxdate ? [{
+        'datename': 'refundtime',
+        mindate: payload.mindate,
+        maxdate: payload.maxdate
+      }] : null
     },
   }).then(res => {
     return {

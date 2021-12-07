@@ -61,13 +61,13 @@ const Registration = () => {
     },
     {
       title: '开始申请时间',
-      dataIndex: 'Createtime',
+      dataIndex: 'mindate',
       valueType: 'dateTime',
       hideInTable: true,
     },
     {
       title: '结束申请时间',
-      dataIndex: 'createtime',
+      dataIndex: 'maxdate',
       valueType: 'dateTime',
       hideInTable: true,
     },

@@ -7,6 +7,7 @@ export async function queryTRefundService(payload: any) {
     data: {
       pageno: payload.current,
       pagesize: payload.pageSize,
+      condition: payload,
     },
   }).then(res => {
     return {

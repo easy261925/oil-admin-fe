@@ -52,11 +52,17 @@ const Refund = () => {
     {
       title: '开始时间',
       dataIndex: 'notifyTime',
-      valueType: 'dateTime'
+      valueType: 'dateTime',
+    },
+    {
+      title: '开始时间',
+      dataIndex: 'mindate',
+      valueType: 'dateTime',
+      hideInTable: true,
     },
     {
       title: '结束时间',
-      dataIndex: 'notifyTime',
+      dataIndex: 'maxdate',
       valueType: 'dateTime',
       hideInTable: true,
     },

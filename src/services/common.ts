@@ -111,7 +111,12 @@ export async function queryShanghuService(payload: any) {
     data: {
       pageno: payload.current,
       pagesize: payload.pageSize,
-      condition: payload
+      condition: payload,
+      dates: payload.mindate || payload.maxdate ? [{
+        'datename': 'createtime',
+        mindate: payload.mindate,
+        maxdate: payload.maxdate
+      }] : null
     },
   }).then(res => {
     return {
